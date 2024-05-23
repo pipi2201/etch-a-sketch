@@ -1,0 +1,19 @@
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+}
+
+.square {
+    border: 1px solid black;
+    width: 2rem;
+    height: 2rem;
+}
+
+.button {
+    padding: 10px 20px;
+}
