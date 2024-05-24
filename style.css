@@ -1,17 +1,19 @@
 #container {
     display: flex;
     flex-direction: column;
+    width: 50rem;
+    height: 50rem;
 }
 
 .rows {
     display: flex;
+    flex: auto;
     flex-direction: row;
 }
 
 .square {
+    flex: auto;
     border: 1px solid black;
-    width: 2rem;
-    height: 2rem;
 }
 
 .button {
