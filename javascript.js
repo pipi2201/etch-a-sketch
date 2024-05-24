@@ -2,12 +2,12 @@ const container = document.querySelector("#container");
 let numberOfSquares = 16;
 makeGrid(numberOfSquares);
 
-function random_rgb() {
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-    return "rgb(" + getRandomInt(255) + ", " + getRandomInt(255) + ", " + getRandomInt(255) + ")";
-}
+// function random_rgb() {
+//     function getRandomInt(max) {
+//         return Math.floor(Math.random() * max);
+//       }
+//     return "rgb(" + getRandomInt(255) + ", " + getRandomInt(255) + ", " + getRandomInt(255) + ")";
+// }
 
 function makeGrid(numberOfSquares) {
     for (let i = 0; i < numberOfSquares; i++) {
@@ -24,7 +24,16 @@ function makeGrid(numberOfSquares) {
     const pixels = document.querySelectorAll(".square");
     pixels.forEach((pixelNode) => {
         pixelNode.addEventListener("mouseover", () => {
-        pixelNode.style.backgroundColor = random_rgb();
+        pixelNode.style.backgroundColor = "black";
+        pixelNode.style.opacity = "0.1";
+        //doesnt work! check whole conditional!
+        if (pixelNode.style.opacity === "0.1") {
+            pixelNode.style.opacity = "0.2";
+        }
+        else if (pixelNode.style.opacity === "0.2") {
+            pixelNode.style.opacity = "0.3";
+        }
+        console.log(pixelNode.style.opacity);
     });    
 });
 }
