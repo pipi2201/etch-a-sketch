@@ -2,6 +2,13 @@ const container = document.querySelector("#container");
 let numberOfSquares = 16;
 makeGrid(numberOfSquares);
 
+function random_rgb() {
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+    return "rgb(" + getRandomInt(255) + ", " + getRandomInt(255) + ", " + getRandomInt(255) + ")";
+}
+
 function makeGrid(numberOfSquares) {
     for (let i = 0; i < numberOfSquares; i++) {
         const row = document.createElement("div");
@@ -17,7 +24,7 @@ function makeGrid(numberOfSquares) {
     const pixels = document.querySelectorAll(".square");
     pixels.forEach((pixelNode) => {
         pixelNode.addEventListener("mouseover", () => {
-        pixelNode.style.backgroundColor = "black";
+        pixelNode.style.backgroundColor = random_rgb();
     });    
 });
 }
