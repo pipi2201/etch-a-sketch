@@ -23,21 +23,13 @@ function makeGrid(numberOfSquares) {
     }
     const pixels = document.querySelectorAll(".square");
     pixels.forEach((pixelNode) => {
-        pixelNode.addEventListener("mouseover", () => {
         pixelNode.style.backgroundColor = "black";
-        pixelNode.style.opacity = "0.1";
-        //doesnt work! check whole conditional!
-        if (pixelNode.style.opacity === "0.1") {
-            pixelNode.style.opacity = "0.2";
-        }
-        else if (pixelNode.style.opacity === "0.2") {
-            pixelNode.style.opacity = "0.3";
-        }
-        console.log(pixelNode.style.opacity);
+        pixelNode.style.opacity = "0.0";
+        pixelNode.addEventListener("mouseover", () => {
+        pixelNode.style.opacity = Math.min(+pixelNode.style.opacity + 0.1, 1);
     });    
 });
 }
-
 
 const body = document.querySelector("body");
 const button = document.createElement("button");
